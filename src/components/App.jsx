@@ -1,23 +1,29 @@
-import { Container } from './App.styled';
+import { ContainerStyled } from './App.styled';
 
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
+import { Box, Container, Grid } from '@mui/material';
+import SearchAppBar from './Header/AppBar/AppBar';
 
 const App = () => {
   return (
     <>
-      <Container>
-        <h2>Phonebook</h2>
+      <Container maxWidth="lg">
+        <SearchAppBar />
 
-        <ContactForm />
-      </Container>
+        <ContainerStyled>
+          <h2>Phonebook</h2>
 
-      <Container>
-        <h2>Contacts</h2>
+          <ContactForm />
+        </ContainerStyled>
 
-        <Filter />
-        <ContactList />
+        <ContainerStyled>
+          <h2>Contacts</h2>
+
+          <Filter />
+          <ContactList />
+        </ContainerStyled>
       </Container>
     </>
   );

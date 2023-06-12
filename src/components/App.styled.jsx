@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
+export const ContainerStyled = styled.div`
   border: 1px solid black;
   border-radius: 2px;
   width: 350px;

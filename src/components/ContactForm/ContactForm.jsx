@@ -1,8 +1,10 @@
 import { nanoid } from '@reduxjs/toolkit';
-import { Button, Form, Input, Label } from './ContactForm.styled';
+import { Form, Input, Label } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -65,7 +67,14 @@ const ContactForm = () => {
           id={numberInputId}
         />
       </Label>
-      <Button type="submit">Add contact</Button>
+      <Button
+        variant="contained"
+        size="medium"
+        endIcon={<SendIcon />}
+        type="submit"
+      >
+        Add contact
+      </Button>
     </Form>
   );
 };
