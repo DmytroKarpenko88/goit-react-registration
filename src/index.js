@@ -9,21 +9,21 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 import CssBaseline from '@mui/material/CssBaseline';
 
-import {
-  //  GlobalStyles,
-  theme,
-} from 'styles';
+import { GlobalStyles, theme } from 'styles';
 import { ThemeProvider } from 'styled-components';
-// import { Global } from '@emotion/react';
+import { Global } from '@emotion/react';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <Global styles={GlobalStyles} /> */}
+      <Global styles={GlobalStyles} />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <App />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </PersistGate>
       </Provider>
     </ThemeProvider>

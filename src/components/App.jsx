@@ -3,8 +3,9 @@ import { ContainerStyled } from './App.styled';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
-import { Box, Container, Grid } from '@mui/material';
+import { Container, Switch } from '@mui/material';
 import SearchAppBar from './Header/AppBar/AppBar';
+import { Route } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -12,7 +13,11 @@ const App = () => {
       <Container maxWidth="lg">
         <SearchAppBar />
 
-        <ContainerStyled>
+        <Switch>
+          <Route />
+        </Switch>
+
+        {/* <ContainerStyled>
           <h2>Phonebook</h2>
 
           <ContactForm />
@@ -23,7 +28,7 @@ const App = () => {
 
           <Filter />
           <ContactList />
-        </ContainerStyled>
+        </ContainerStyled> */}
       </Container>
     </>
   );
